@@ -4,13 +4,7 @@ EXPOSE 24224
 
 USER root
 
-RUN apt-get update
-RUN apt-get install build-essential -y
-RUN gem install jeweler
-
 RUN mkdir localgem
-COPY lib/ localgem/lib/
-COPY fluent-plugin-sns.gemspec localgem/fluent-plugin-sns.gemspec
-COPY Rakefile localgem/Rakefile
-COPY VERSION localgem/VERSION
+COPY fluent-plugin-sns-3.2.0.gem localgem/fluent-plugin-sns-3.2.0.gem
 
+RUN gem install localgem/fluent-plugin-sns-3.2.0.gem
