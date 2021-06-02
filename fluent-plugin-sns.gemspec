@@ -5,15 +5,16 @@
 # stub: fluent-plugin-sns 3.2.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "fluent-plugin-sns"
+  s.name = "fluent-plugin-sns".freeze
   s.version = "3.2.0"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.require_paths = ["lib"]
-  s.authors = ["Yuri Odagiri"]
-  s.date = "2017-06-09"
-  s.email = "ixixizko@gmail.com"
+  s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib".freeze]
+  s.authors = ["Yuri Odagiri".freeze]
+  s.date = "2021-06-02"
+  s.email = "ixixizko@gmail.com".freeze
   s.extra_rdoc_files = [
+    "CHANGELOG.md",
     "README.rdoc"
   ]
   s.files = [
@@ -22,23 +23,23 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/fluent/plugin/out_sns.rb"
   ]
-  s.homepage = "https://github.com/ixixi/fluent-plugin-sns"
-  s.rubygems_version = "2.4.1"
-  s.summary = "Amazon SNS output plugin for Fluent event collector"
+  s.homepage = "https://github.com/ixixi/fluent-plugin-sns".freeze
+  s.rubygems_version = "3.0.3".freeze
+  s.summary = "Amazon SNS output plugin for Fluent event collector".freeze
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<fluentd>, ["< 2", ">= 0.10.0"])
-      s.add_runtime_dependency(%q<aws-sdk>, ["~> 2"])
+      s.add_runtime_dependency(%q<fluentd>.freeze, [">= 0.10.0", "< 2"])
+      s.add_runtime_dependency(%q<aws-sdk>.freeze, ["~> 2"])
     else
-      s.add_dependency(%q<fluentd>, ["< 2", ">= 0.10.0"])
-      s.add_dependency(%q<aws-sdk>, ["~> 2"])
+      s.add_dependency(%q<fluentd>.freeze, [">= 0.10.0", "< 2"])
+      s.add_dependency(%q<aws-sdk>.freeze, ["~> 2"])
     end
   else
-    s.add_dependency(%q<fluentd>, ["< 2", ">= 0.10.0"])
-    s.add_dependency(%q<aws-sdk>, ["~> 2"])
+    s.add_dependency(%q<fluentd>.freeze, [">= 0.10.0", "< 2"])
+    s.add_dependency(%q<aws-sdk>.freeze, ["~> 2"])
   end
 end
 

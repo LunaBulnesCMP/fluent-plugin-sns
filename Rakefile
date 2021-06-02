@@ -10,7 +10,6 @@ begin
     gemspec.author = "Yuri Odagiri"
     gemspec.email = "ixixizko@gmail.com"
     gemspec.homepage = "https://github.com/ixixi/fluent-plugin-sns"
-    gemspec.has_rdoc = false
     gemspec.require_paths = ["lib"]
     gemspec.add_dependency "fluentd", ">= 0.10.0", "< 2"
     gemspec.add_dependency "aws-sdk", "~> 2"
