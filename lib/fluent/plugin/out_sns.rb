@@ -27,8 +27,7 @@ module Fluent
     config_param :sns_body, :string, :default => nil
     config_param :sns_message_attributes, :hash, :default => nil
     config_param :sns_message_attributes_keys, :hash, :default => nil
-    config_param :sns_endpoint, :string, :default => 'sns.ap-northeast-1.amazonaws.com',
-                 :obsoleted => 'Use sns_region instead'
+    config_param :sns_endpoint, :string, :default => 'sns.ap-northeast-1.amazonaws.com'
     config_param :sns_region, :string, :default => 'ap-northeast-1'
     config_param :proxy, :string, :default => ENV['HTTP_PROXY']
 
@@ -40,6 +39,7 @@ module Fluent
       super
       options = {}
       options[:region] = @sns_region
+      options[:endpoint] = @sns_endpoint
       options[:http_proxy] = @proxy
       if @aws_key_id && @aws_sec_key
         options[:credentials] = Aws::Credentials.new(@aws_key_id, @aws_sec_key)
