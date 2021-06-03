@@ -28,5 +28,13 @@ enter:
 
 gem:
 	@rm -f fluent-plugin*.gem
+	@rm -f ./ops/docker/fluent-plugin*.gem
 	@rake gemspec
 	@gem build *.gemspec
+	@cp ./*.gem ./ops/docker/fluentd
+
+build-fluentd:
+	@docker build --pull -t quay.io/cmproductions/diet:fluentd-1.12.2 --build-arg buildPath="./" ops/docker/fluentd
+
+push-fluentd:
+	@docker push quay.io/cmproductions/diet:fluentd-1.12.2

@@ -49,3 +49,4 @@ lex.yy.c
 
 .idea/
 *.gem
+ops/docker/fluentd/*.gem
