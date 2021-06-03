@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Yuri Odagiri".freeze]
-  s.date = "2021-06-02"
+  s.date = "2021-06-03"
   s.email = "ixixizko@gmail.com".freeze
   s.extra_rdoc_files = [
     "CHANGELOG.md",

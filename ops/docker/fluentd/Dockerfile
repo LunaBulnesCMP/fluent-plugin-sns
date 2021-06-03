@@ -5,6 +5,6 @@ EXPOSE 24224
 USER root
 
 RUN mkdir localgem
-COPY fluent-plugin-sns-3.2.0.gem localgem/fluent-plugin-sns-3.2.0.gem
+COPY *.gem localgem/*.gem
 
-RUN gem install localgem/fluent-plugin-sns-3.2.0.gem
+RUN gem install localgem/*.gem

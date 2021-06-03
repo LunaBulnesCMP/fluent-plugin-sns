@@ -25,3 +25,8 @@ errors:
 
 enter:
 	@./ops/scripts/enter.sh ${COMPONENT}
+
+gem:
+	@rm -f fluent-plugin*.gem
+	@rake gemspec
+	@gem build *.gemspec
