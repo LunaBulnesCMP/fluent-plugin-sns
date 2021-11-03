@@ -27,7 +27,8 @@ module Fluent
     config_param :sns_body, :string, :default => nil
     config_param :sns_message_attributes, :hash, :default => nil
     config_param :sns_message_attributes_keys, :hash, :default => nil
-    config_param :sns_endpoint, :string, :default => 'sns.ap-northeast-1.amazonaws.com'
+    config_param :sns_endpoint, :string, :default => 'https://sns.ap-northeast-1.amazonaws.com'
+    config_param :sns_topic_arn, :string, :default => nil
     config_param :sns_region, :string, :default => 'ap-northeast-1'
     config_param :proxy, :string, :default => ENV['HTTP_PROXY']
 
@@ -47,9 +48,13 @@ module Fluent
       Aws.config.update(options)
 
       @sns = Aws::SNS::Resource.new
-      @topic = @sns.topics.find{|topic| @sns_topic_name == topic.arn.split(":")[-1]}
-      if @topic.nil?
-        raise ConfigError, "No topic found for topic name #{@sns_topic_name}."
+      if @sns_topic_arn
+        @topic = Aws::SNS::Topic.new(@sns_topic_arn)
+      else
+        @topic = @sns.topics.find{|topic| @sns_topic_name == topic.arn.split(":")[-1]}
+          if @topic.nil?
+            raise ConfigError, "No topic found for topic name #{@sns_topic_name}."
+          end
       end
 
       @subject_template = nil

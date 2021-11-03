@@ -34,7 +34,7 @@ gem:
 	@cp ./*.gem ./ops/docker/fluentd
 
 build-fluentd:
-	@docker build --pull -t quay.io/cmproductions/diet:fluentd-1.12.2 --build-arg buildPath="./" ops/docker/fluentd
+	@docker build --pull -t quay.io/cmproductions/diet:fluentd-staging_test-8 --build-arg buildPath="./" ops/docker/fluentd
 
 push-fluentd:
-	@docker push quay.io/cmproductions/diet:fluentd-1.12.2
+	@docker push quay.io/cmproductions/diet:fluentd-staging_test-8

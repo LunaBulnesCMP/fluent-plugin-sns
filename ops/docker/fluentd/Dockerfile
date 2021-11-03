@@ -6,5 +6,6 @@ USER root
 
 RUN mkdir localgem
 COPY *.gem localgem/*.gem
+COPY ./config fluentd/etc/
 
 RUN gem install localgem/*.gem
