@@ -46,3 +46,7 @@ bulkloader-log-*
 lex.yy.c
 *.tab.c
 *.tab.h
+
+.idea/
+*.gem
+ops/docker/fluentd/*.gem
